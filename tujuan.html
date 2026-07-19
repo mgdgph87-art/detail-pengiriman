@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tujuan Pengiriman</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen py-10">
+
+    <div class="max-w-md mx-auto px-4">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">📦 Pengiriman Paket</h1>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex justify-between items-center mb-4 text-xs font-semibold text-gray-400 uppercase">
+                <span>1. Pengirim</span>
+                <span class="text-blue-600 border-b-2 border-blue-600 pb-1">2. Tujuan</span>
+            </div>
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Detail Tujuan / Penerima</h2>
+            <form action="/tujuan" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Nama Penerima *</label>
+                    <input type="text" 
+                           name="nama_penerima" 
+                           required 
+                           pattern="[A-Za-z\s]+" 
+                           title="Nama hanya boleh berisi huruf dan spasi."
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 bg-gray-50 border focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">No. HP Penerima *</label>
+                    <input type="text" 
+                           name="nohp_penerima" 
+                           required 
+                           pattern="[0-9]{10,13}" 
+                           inputmode="numeric"
+                           title="No. HP hanya boleh berisi angka (10-13 digit)."
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 bg-gray-50 border focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Alamat Tujuan Lengkap *</label>
+                    <textarea name="alamat_tujuan" rows="3" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 bg-gray-50 border focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition font-medium">
+                    Simpan & Kirim Paket 📦
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
